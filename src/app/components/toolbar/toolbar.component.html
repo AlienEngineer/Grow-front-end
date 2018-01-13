@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" >
+    <mat-toolbar-row>
+      <span>Grow v2.0</span>
+  
+      <span class="toolbar-spacer"></span>
+      
+      <button mat-button 
+      *ngFor="let action of getActions()" 
+      (click)="actionClicked(action)"
+      [disabled]="action == activeAction"
+      ><mat-icon>{{action.icon}}</mat-icon> {{action.label}}</button>
+
+    </mat-toolbar-row>
+  </mat-toolbar>

@@ -11,13 +11,16 @@ import { UsersDataSourceService } from "./services/users-data-source.service";
 import { CurrentUserService } from "./services/current-user.service";
 
 import { HttpClientModule } from '@angular/common/http';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { NavigationService } from './services/navigation.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PinInputComponent,
-    UsersInputComponent
+    UsersInputComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     UsersDataSourceService,
-    CurrentUserService
+    CurrentUserService,
+    NavigationService
   ],
   bootstrap: [AppComponent]
 })

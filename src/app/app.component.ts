@@ -7,9 +7,8 @@ import { CurrentUserService } from './services/current-user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Grow v2';
 
-  constructor(private currentUser: CurrentUserService) {
+  constructor(private currentUser : CurrentUserService) {
 
   }
 
@@ -17,7 +16,4 @@ export class AppComponent {
     return this.currentUser.isUserLoggedIn();
   }
 
-  logout(): void {
-    this.currentUser.logout();
-  }
 }

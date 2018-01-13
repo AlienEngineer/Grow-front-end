@@ -15,6 +15,10 @@ export class CurrentUserService {
     return this.getUser() != null;
   }
   
+  isUserAdmin(): boolean {
+    return this.isUserLoggedIn() && this.getUser().isAdmin;
+  }
+
   getUser() : User {
     return this._loggedUser;
   }
