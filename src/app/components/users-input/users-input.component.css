@@ -1,0 +1,24 @@
+.user-button {
+    width: 80px;
+    height: 80px;
+    display: inline;
+    overflow: hidden;
+}
+
+:host /deep/ .user-button > .mat-button-wrapper {
+    display: inline;
+}
+
+.user-button-text {
+    height: 80px;
+    display: block;
+    width: 80px;
+    text-align: center;
+    margin-top: 26px;
+}
+
+.user-button-img {
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CurrentUserService } from './services/current-user.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Grow v2';
+
+  constructor(private currentUser: CurrentUserService) {
+
+  }
+
+  isUserLoggedIn(): boolean {
+    return this.currentUser.isUserLoggedIn();
+  }
+
+  logout(): void {
+    this.currentUser.logout();
+  }
 }

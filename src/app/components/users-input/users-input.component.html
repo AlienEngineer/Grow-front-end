@@ -1,0 +1,10 @@
+<div>
+    <mat-grid-list cols="3" rowHeight="2:2">
+        <mat-grid-tile *ngFor="let user of users">
+          <a mat-fab (click)="selectUser(user)" class="user-button">
+            <img [hidden]="user.image == null" src={{user.image}} class="user-button-img" />
+            <span [hidden]="user.image != null" class="user-button-text"> {{user.name}} </span>
+          </a>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
