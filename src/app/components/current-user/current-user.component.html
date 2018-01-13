@@ -1,0 +1,4 @@
+<a mat-fab  class="user-button">
+    <img [hidden]="getUser().image == null" src={{getUser().image}} class="user-button-img" />
+    <span [hidden]="getUser().image != null" class="user-button-text"> {{getUser().name}} </span>
+</a>

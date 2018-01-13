@@ -15,5 +15,6 @@ const user = ({
 
 export const environment = {
   production: false,
-  loggedInUser: user
+  loggedInUser: user,
+  activeAction: 0
 };

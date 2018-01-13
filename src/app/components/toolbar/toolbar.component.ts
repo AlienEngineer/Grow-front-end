@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CurrentUserService } from '../../services/current-user.service';
 import { NavigationService } from '../../services/navigation.service';
 import { INavigationAction } from '../../services/NavigationActions/INavigationAction';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-toolbar',
@@ -10,13 +11,12 @@ import { INavigationAction } from '../../services/NavigationActions/INavigationA
 })
 export class ToolbarComponent implements OnInit {
 
+  @Output() actionSelectedEvent = new EventEmitter<INavigationAction>();
   activeAction: INavigationAction;
-  constructor(private navigation: NavigationService) {
-
-  }
+  constructor(private navigation: NavigationService) { }
 
   ngOnInit() {
-
+    this.actionClicked(this.getActions()[environment.activeAction])
   }
 
   getActions(): INavigationAction[] {
@@ -25,8 +25,10 @@ export class ToolbarComponent implements OnInit {
   }
 
   actionClicked(action: INavigationAction): void {
+
     this.activeAction = action;
     action.execute();
+    this.actionSelectedEvent.emit(action);
   }
 
 }

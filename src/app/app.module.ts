@@ -7,12 +7,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { PinInputComponent } from './components/pin-input/pin-input.component';
 import { UsersInputComponent } from './components/users-input/users-input.component';
-import { UsersDataSourceService } from "./services/users-data-source.service";
+import { UsersService } from "./services/users.service";
 import { CurrentUserService } from "./services/current-user.service";
 
 import { HttpClientModule } from '@angular/common/http';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { NavigationService } from './services/navigation.service';
+import { ServicesService } from './services/services.service';
+import { ServicesInputComponent } from './components/services-input/services-input.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { NewSessionComponent } from './components/new-session/new-session.component';
+import { CurrentUserComponent } from './components/current-user/current-user.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,11 @@ import { NavigationService } from './services/navigation.service';
     LoginComponent,
     PinInputComponent,
     UsersInputComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ServicesInputComponent,
+    LayoutComponent,
+    NewSessionComponent,
+    CurrentUserComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +39,13 @@ import { NavigationService } from './services/navigation.service';
     HttpClientModule
   ],
   providers: [
-    UsersDataSourceService,
+    UsersService,
+    ServicesService,
     CurrentUserService,
     NavigationService
+  ],
+  entryComponents: [
+    NewSessionComponent
   ],
   bootstrap: [AppComponent]
 })

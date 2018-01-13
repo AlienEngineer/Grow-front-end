@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
 
   userSelectedEvent(user: User) {
     this.user = user;
-    console.log(this.user);
   }
 
   pinSubmitEvent(pin: string) {

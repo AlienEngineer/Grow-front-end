@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from "../../Models/User"
-import { UsersDataSourceService } from "../../services/users-data-source.service";
+import { UsersService } from "../../services/users.service";
 
 @Component({
   selector: 'app-users-input',
@@ -12,11 +12,11 @@ export class UsersInputComponent implements OnInit {
   
   users: User[];
 
-  constructor(private userRepository : UsersDataSourceService) { }
+  constructor(private userRepository : UsersService) { }
 
   ngOnInit() {
     this.userRepository.getUsers().subscribe(data => {
-      this.users = data.users;
+      this.users = data;
     });
   }
 
